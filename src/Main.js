@@ -9,7 +9,7 @@ import {
 
 class Main extends Component {
   render() {
-    const { userName } = this.props;
+    const { userName, gender, phone, address } = this.props;
     return (
       <View style={Styles.classContainer}>
         <View style={Styles.containerPerSection}>
@@ -28,8 +28,10 @@ class Main extends Component {
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Gender</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Gender</Text>
+          <TouchableOpacity 
+            onPress={() => this.props.navigateToInputFormGender()}
+            style={Styles.inputContainer}>
+            <Text style={Styles.inputResult}>{ gender }</Text>
           </TouchableOpacity>
         </View>
 
@@ -37,8 +39,10 @@ class Main extends Component {
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Phone</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Phone</Text>
+          <TouchableOpacity 
+            onPress={() => this.props.navigateToInputFormPhone()}
+            style={Styles.inputContainer}>
+            <Text style={Styles.inputResult}>{ phone }</Text>
           </TouchableOpacity>
         </View>
 
@@ -46,8 +50,10 @@ class Main extends Component {
           <View style={Styles.textContainer}>
             <Text style={Styles.text}>Address</Text>
           </View>
-          <TouchableOpacity style={Styles.inputContainer}>
-            <Text style={Styles.inputResult}>Address</Text>
+          <TouchableOpacity 
+            onPress={() => this.props.navigateToInputFormAddress()}
+            style={Styles.inputContainer}>
+            <Text style={Styles.inputResult}>{ address }</Text>
           </TouchableOpacity>
         </View>
 
