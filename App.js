@@ -46,6 +46,10 @@ class App extends Component {
     this.setState({ pageNeedsTobeRendered: "Main" });
   };
 
+  navigateToResultPage = () => {
+    this.setState({ pageNeedsTobeRendered: "Result" });
+  };
+
   setUserName = (name) => {
     this.setState({ userName:  name });
   };
@@ -88,6 +92,14 @@ class App extends Component {
                 setAddress={this.setAddress}
       />;
     }
+    else if(pageNeedsTobeRendered === "Result") {
+      return <Result 
+                userName={userName}
+                gender={gender}
+                phone={phone}
+                address={address}
+      />;
+    }
 
     return (
       <Main
@@ -99,6 +111,7 @@ class App extends Component {
         navigateToInputFormGender={this.navigateToInputFormGender}
         navigateToInputFormPhone={this.navigateToInputFormPhone}
         navigateToInputFormAddress={this.navigateToInputFormAddress}
+        navigateToResultPage={this.navigateToResultPage}
       />
     );
   }

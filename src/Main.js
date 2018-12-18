@@ -57,7 +57,8 @@ class Main extends Component {
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={Styles.buttonSubmit}>
+        <TouchableOpacity style={Styles.buttonSubmit}
+          onPress={() => this.props.navigateToResultPage()}>
           <Text style={Styles.textButton}>Submit</Text>
         </TouchableOpacity>
       </View>
